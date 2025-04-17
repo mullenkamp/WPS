@@ -178,7 +178,7 @@ int enc_jpeg2000(unsigned char *cin,g2int *pwidth,g2int *pheight,g2int *pnbits,
 /*
  *     Encode image.
  */
-    ier=jas_image_encode(&image,jpcstream,opts);
+    ier=jas_image_encode(&image,jpcstream,jas_image_getfmt(&image),opts);
     if ( ier != 0 ) {
        printf(" jas_image_encode return = %d \n",ier);
        return -3;
